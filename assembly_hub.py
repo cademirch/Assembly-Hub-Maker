@@ -7,9 +7,6 @@ import re
 import sys
 from pathlib import Path
 
-#  input = GCF_003259725.1_athCun1, path to genomes.txt
-# required file rmskBed6+10.as, bigGenePred.as
-
 
 class Genome:
     def __init__(self, genome_name, path_to_genomes):
@@ -227,19 +224,14 @@ def main():
 
     if not args.skip:
         myGenome.download()
-
         myGenome.format()
         myGenome.make_repeat_files()
-
         myGenome.make_track_db()
-
         myGenome.write_to_genome()
     else:
         myGenome.format()
         myGenome.make_repeat_files()
-
         myGenome.make_track_db()
-
         myGenome.write_to_genome()
-
-main()
+if __name__ == "__main__":
+    main()
